@@ -20,7 +20,7 @@ function main() {
 	firmware_files "$CW_DIR/files_movistar/"
 
 	prepare_imagebuilder "ar71xx/generic" "ar71xx-generic"
-	build_firmware "ar71xx" "TLWDR4300" "openwrt-*-tl-wdr4300*.*"
+	build_firmware "ar71xx" "TLWDR4300" "openwrt-*-tl-wdr4300-v1-squashfs*.*"
 
 	generate_checksums "ar71xx"
 }
