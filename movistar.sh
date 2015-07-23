@@ -15,29 +15,14 @@ function main() {
 	movistar_ftth "$CW_DIR/files_movistar"
 
 	release_version "chaos_calmer" "15.05-rc3"
-	firmware_packages "kmod-bridge kmod-ipt-nathelper-rtsp bird4 mcproxy miniupnpd udpxy xupnpd luci luci-app-ddns luci-app-udpxy luci-app-upnp luci-proto-ipv6"
+	firmware_packages "luci luci-i18n-spanish luci-i18n-base-es kmod-bridge kmod-ipt-nathelper-rtsp swconfig bird4 igmpproxy udpxy luci-app-udpxy nfs-utils kmod-fs-nfs kmod-fs-nfs-common kmod-nls-cp437 kmod-nls-cp850 kmod-nls-cp852 kmod-nls-iso8859-15 kmod-nls-utf8 miniupnpd luci-app-upnp tcpdump htop ddns-scripts ddns-scripts_no-ip_com luci-app-ddns kmod-usb-storage kmod-fs-ntfs kmod-fs-ext4 kmod-fs-vfat block-mount kmod-scsi-core e2fsprogs samba36-server luci-app-samba ntfs-3g fdisk kmod-usb2 nfs-kernel-server usbutils kmod-loop kmod-usb-core kmod-usb-ohci kmod-usb-printer cups luci-proto-ipv6"
+
 	firmware_files "$CW_DIR/files_movistar/"
 
 	prepare_imagebuilder "ar71xx/generic" "ar71xx-generic"
-	build_firmware "ar71xx" "TLWDR4300" "openwrt-*-tl-wdr3500*.* openwrt-*-tl-wdr3600*.* openwrt-*-tl-wdr43*.* openwrt-*-tl-mw4530r*.*"
-	build_firmware "ar71xx" "TLWDR4900V2" "openwrt-*-tl-wdr4900*.*"
-	build_firmware "ar71xx" "ARCHERC7" "openwrt-*-archer-c*.*"
-	build_firmware "ar71xx" "TLWR1043" "openwrt-*-tl-wr1043nd*.*"
-
-	prepare_imagebuilder "brcm63xx/generic" "brcm63xx-generic"
-	build_firmware "brcm63xx" "WAP5813n" "openwrt-*generic*-WAP-5813n*.*"
-
-	prepare_imagebuilder "brcm63xx/smp" "brcm63xx-smp"
-	build_firmware "brcm63xx" "WAP5813n" "openwrt-*smp*-WAP-5813n*.*"
-
-	prepare_imagebuilder "mvebu/generic" "mvebu"
-	build_firmware "mvebu" "Caiman" "openwrt-*-linksys-caiman*.*"
-	build_firmware "mvebu" "Cobra" "openwrt-*-linksys-cobra*.*"
-	build_firmware "mvebu" "Mamba" "openwrt-*-linksys-mamba*.*"
+	build_firmware "ar71xx" "TLWDR4300" "openwrt-*-tl-wdr4300*.*"
 
 	generate_checksums "ar71xx"
-	generate_checksums "brcm63xx"
-	generate_checksums "mvebu"
 }
 
 main
